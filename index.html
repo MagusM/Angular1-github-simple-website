@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+  <title>PK's TASK</title>
+
+  <link data-require="bootstrap-css@*" data-semver="3.3.1" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+  <script data-require="angular.js@~1.4.1" data-semver="1.4.1" src="https://code.angularjs.org/1.4.1/angular.js"></script>
+  <script data-require="angular-route@*" data-semver="1.4.1" src="https://code.angularjs.org/1.4.1/angular-route.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="app.js"></script>
+  <script src="MainController.js"></script>
+  <script src="LoginController.js"></script>
+  <script src="UsertController.js"></script>
+  <script src="srv.js"></script>
+  <script src="navBarController.js"></script>
+
+</head>
+
+<body>
+  <div id="nav-bar" ng-include="'navBar.html'"></div>
+
+  <div id="main" class="container" ng-view></div>
+
+  <hr>
+  <footer>
+    <p>&copy; MaguS</p>
+  </footer>
+</body>
+
+</html>
