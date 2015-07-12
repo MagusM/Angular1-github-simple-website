@@ -1,8 +1,9 @@
 (function(){
-  var MainController = function($scope, $location, srvTask) {
-    
-  };
-  
-  angular.module('app').controller("MainController", MainController);
-  
+    var app = angular.module('cindy');
+
+    var MainController = function() {
+
+    };
+
+    app.controller('MainController', MainController);
 }());

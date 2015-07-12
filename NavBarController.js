@@ -1,24 +1,17 @@
 (function() {
-  var NavBarController = function($scope, $location, srvTask) {
-    // $scope.logout = function() {
-    //   var url = "someUrl";
-    //   var onUserLogoutSuccess = function(response) {
-    //     $location.path("/main");
-    //   };
-    //   var onUserLogoutError = function(reason) {
-    //     $location.path("/main");
-    //   };
-    //   srvTask.getSomeData(url).then(onUserLogoutSuccess, onUserLogoutError);
-    //   $location.path("/main");
-    // };
-    $scope.logout = function(){
-      alert("s");
-      $location.path("/main");
+  var app = angular.module('cindy');
+
+  var NavBarController = function($location, $scope, cindy) {
+    $scope.logout = function() {
+      var url = "someUrl";
+      var onUserLogoutSuccess = function(response) {
+        $location.path("/main");
+      };
+      var onUserLogoutError = function(reason) {
+        $location.path("/main");
+      };
+      cindy.pong(url).then(onUserLogoutSuccess, onUserLogoutError);
     };
-
-
   };
-
-  angular.module("app").controller("NavBarController", NavBarController);
-
+  app.controller('NavBarController', NavBarController)
 }());
