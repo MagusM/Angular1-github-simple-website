@@ -2,3 +2,26 @@
   padding-top: 100px;
   min-height: 680px;
 }
+
+#githubImg {
+	position: relative;
+	-webkit-animation-name: example; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+    animation-name: example;
+    animation-duration: 6s;
+    -webkit-animation-timing-function: ease;
+    animation-direction: reverse;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes example {
+	from {left: 0px;}
+    to {left: 870px;}
+
+}
+
+/* Standard syntax */
+@keyframes example {
+	from {left: 0px;}
+    to {left: 870px;}
+}
