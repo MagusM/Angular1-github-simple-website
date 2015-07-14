@@ -3,15 +3,15 @@
   <form class="form-signin" ng-submit="userLogin(user)">
     <h2 class="form-signin-heading">Please sign in</h2>
     <label for="inputEmail" class="sr-only">Email address</label>
-    <input type="text" id="inputName" class="form-control" placeholder="Your Name (pavel)" required autofocus ng-model="user.name">
+    <input type="text" id="inputName" class="form-control" placeholder="Your Name (master)" required autofocus ng-model="user.name">
  	<br>
     <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Password (pk)" required ng-model="user.password">
-    <div class="checkbox">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
-    </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password (yoda)" required ng-model="user.password">
+    <button style="margin-top:20px" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
   </form>
+
+  <div style="margin-top:20px" class="alert alert-danger" ng-show="error">
+  <strong>Eror!</strong> Login values are incorrect!<br> hint (master, yoda).
+</div>
+
 </div>
