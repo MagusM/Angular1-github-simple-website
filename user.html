@@ -1,0 +1,67 @@
+<div ng-model="user">
+	<div class="container-fluid">
+		<div>
+			<img id="githubImg" ng-src="https://avatars.githubusercontent.com/u/9919?v=3" title="GitHub" class="img-rounded" width="220" height="240">
+		</div>
+		<div class="page-header">
+			<hr>
+  			<h1>Please choose add or remove repo from github<br>the default is mine <kbd>MagusM</kbd> :) </h1>
+		</div>
+
+		<div style="padding-top: 25px">
+			<button type="button" class="btn btn-success" ng-click="showAddDiv()">add</button>
+			<button type="button" class="btn btn-danger" ng-click="showRemoveDiv()">remove</button>
+		</div>
+		<div ng-switch="show">
+			<div ng-switch-when="addRepoDiv">
+			<form role="form" ng-submit="addAnotherGitLib(gitName)">
+				<div class="form-group">
+					<label class="bg-info" for="usr">Want to add another GitHub library to the view? enter a GitHub valid name:</label>
+					<input type="text" autofocus class="form-control" id="usr" ng-model="gitName">
+				</div>
+				<button class="btn btn-sm btn-primary btn-block" type="submit">Add Lib'</button>
+			</form>
+			<div class="alert alert-danger" ng-show="error">
+				<strong>Error!</strong> Could not find such a GitHab user.
+			</div>
+		</div>
+		<div ng-switch-when="removeRepoDiv">
+			<form role="form" ng-submit="removeGitUserLib(gitName)">
+				<div class="form-group">
+					<label class="bg-info" for="usr">Want to remove a GitHub library from the view? enter a GitHub valid name:</label>
+					<input type="text" autofocus class="form-control" id="usr" ng-model="gitName">
+				</div>
+				<button class="btn btn-sm btn-primary btn-block" type="submit">Remove Lib'</button>
+			</form>
+			<div class="alert alert-danger" ng-show="error">
+				<strong>Error!</strong> Could not find such a GitHab user.
+			</div>
+		</div>
+		</div>
+
+		<h2 class="sub-header">GitHub info of {{user.name}}</h2>
+		<div class="table-responsive">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Photo</th>
+						<th>id</th>
+						<th>repo name</th>
+						<th>type</th>
+						<th>login</th>
+						<th>site admin</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="repo in repos">
+						<td><img ng-src="{{repo.owner.avatar_url}}" width="40" height="40"></td>
+						<td>{{repo.id}}</td>
+						<td>{{repo.name}}</td>
+						<td>{{repo.owner.type}}</td>
+						<td>{{repo.owner.login}}</td>
+						<td>{{repo.owner.site_admin}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
